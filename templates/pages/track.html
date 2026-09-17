@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Track Your Shipment | USPS Globals{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/track.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="track-hero-section d-none d-lg-block">
+    <div class="container">
+        <div class="track-hero-grid">
+            <div class="track-hero-content">
+                <span class="section-label">TRACK SHIPMENT</span>
+                <h1>
+                    Know where your
+                    <span>shipment is.</span>
+                </h1>
+                <p>
+                    Enter your tracking number to view the latest status,
+                    location, and progress of your shipment with USPS Globals.
+                </p>
+
+                <div class="track-hero-actions">
+                    <a href="#tracking-search" class="btn btn-primary">
+                        Track Your Shipment
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+                    <a href="/contact/" class="track-hero-link">
+                        Need help?
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="track-hero-visual">
+                <div class="track-hero-card">
+                    <div class="track-grid-lines"></div>
+
+                    <div class="track-route-line"></div>
+
+                    <div class="track-route-point track-point-one">
+                        <span></span>
+                        <strong>Origin</strong>
+                    </div>
+
+                    <div class="track-route-point track-point-two">
+                        <span></span>
+                        <strong>In Transit</strong>
+                    </div>
+
+                    <div class="track-route-point track-point-three">
+                        <span></span>
+                        <strong>Destination</strong>
+                    </div>
+
+                    <div class="track-package">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div class="track-hero-status">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <div>
+                            <strong>Shipment in transit</strong>
+                            <span>Moving toward destination</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="tracking-search-section" id="tracking-search">
+    <div class="container">
+        <div class="tracking-search-card">
+            <div class="tracking-search-content">
+                <span class="section-label">SHIPMENT TRACKING</span>
+                <h2>Where is your shipment?</h2>
+                <p>
+                    Enter your USPS Globals tracking number below to check
+                    the latest shipment status and location.
+                </p>
+
+                <form id="tracking-form" class="tracking-search-form">
+                    <div class="tracking-input-wrap">
+                        <i class="bi bi-search"></i>
+                        <input
+                            type="text"
+                            id="tracking-number"
+                            name="tracking_number"
+                            placeholder="Enter tracking number"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Track Shipment
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+
+                <div id="tracking-results"></div>
+
+                <span class="tracking-search-note">
+                    <i class="bi bi-shield-check"></i>
+                    Enter the tracking number provided with your shipment.
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="tracking-status-section">
+    <div class="container">
+        <div class="tracking-status-header">
+            <span class="section-label">SHIPMENT STATUS</span>
+            <h2>Follow every step of the journey.</h2>
+            <p>
+                Once a shipment is tracked, its latest status and movement
+                history will appear here.
+            </p>
+        </div>
+
+        <div class="tracking-status-card">
+            <div class="tracking-status-top">
+                <div>
+                    <span>Tracking Number</span>
+                    <strong>USPSG-XXXXXXXX</strong>
+                </div>
+
+                <div class="tracking-current-status">
+                    <span class="status-dot"></span>
+                    In Transit
+                </div>
+            </div>
+
+            <div class="tracking-progress">
+                <div class="tracking-progress-line"></div>
+
+                <div class="tracking-step completed">
+                    <span class="tracking-step-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </span>
+                    <strong>Picked Up</strong>
+                    <small>Shipment received</small>
+                </div>
+
+                <div class="tracking-step active">
+                    <span class="tracking-step-icon">
+                        <i class="bi bi-truck"></i>
+                    </span>
+                    <strong>In Transit</strong>
+                    <small>On the way</small>
+                </div>
+
+                <div class="tracking-step">
+                    <span class="tracking-step-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </span>
+                    <strong>Destination</strong>
+                    <small>Arriving soon</small>
+                </div>
+
+                <div class="tracking-step">
+                    <span class="tracking-step-icon">
+                        <i class="bi bi-check-lg"></i>
+                    </span>
+                    <strong>Delivered</strong>
+                    <small>Shipment received</small>
+                </div>
+            </div>
+
+            <div class="tracking-status-location">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                    <span>Current Location</span>
+                    <strong>Shipment location will appear here</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="tracking-info-section">
+    <div class="container">
+        <div class="tracking-info-grid">
+
+            <div class="tracking-info-content">
+                <span class="section-label">SHIPMENT DETAILS</span>
+                <h2>Everything you need to stay informed.</h2>
+                <p>
+                    Your tracking information provides a clear view of your
+                    shipment, from its origin to its final destination.
+                </p>
+
+                <div class="tracking-info-list">
+                    <div class="tracking-info-item">
+                        <i class="bi bi-clock-history"></i>
+                        <div>
+                            <strong>Latest Updates</strong>
+                            <span>See the most recent shipment activity.</span>
+                        </div>
+                    </div>
+
+                    <div class="tracking-info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div>
+                            <strong>Current Location</strong>
+                            <span>Know where your shipment was last recorded.</span>
+                        </div>
+                    </div>
+
+                    <div class="tracking-info-item">
+                        <i class="bi bi-calendar-check"></i>
+                        <div>
+                            <strong>Estimated Delivery</strong>
+                            <span>View the expected delivery date when available.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracking-history-card">
+                <div class="tracking-history-header">
+                    <div>
+                        <span>TRACKING HISTORY</span>
+                        <strong>Shipment Activity</strong>
+                    </div>
+                    <i class="bi bi-clock-history"></i>
+                </div>
+
+                <div class="tracking-history-item active">
+                    <span class="history-dot"></span>
+                    <div>
+                        <strong>In Transit</strong>
+                        <p>Shipment is moving toward its destination.</p>
+                        <small>Latest update</small>
+                    </div>
+                </div>
+
+                <div class="tracking-history-item">
+                    <span class="history-dot"></span>
+                    <div>
+                        <strong>Picked Up</strong>
+                        <p>Shipment was received for processing.</p>
+                        <small>Previous update</small>
+                    </div>
+                </div>
+
+                <div class="tracking-history-item">
+                    <span class="history-dot"></span>
+                    <div>
+                        <strong>Shipment Created</strong>
+                        <p>Shipment information was registered.</p>
+                        <small>Initial update</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="track-cta-section">
+    <div class="container">
+        <div class="track-cta-card">
+            <div class="track-cta-content">
+                <span class="section-label">NEED ASSISTANCE?</span>
+                <h2>Can't find the information you need?</h2>
+                <p>
+                    If you have questions about your shipment or tracking
+                    information, our team is ready to help.
+                </p>
+
+                <div class="track-cta-actions">
+                    <a href="/contact/" class="btn btn-primary">
+                        Contact Us
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                    <a href="/quote/" class="track-cta-link">
+                        Request a Quote
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="track-cta-icon">
+                <i class="bi bi-headset"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function () {
+        $("#tracking-form").on("submit", function (e) {
+            e.preventDefault();
+
+            const form = $(this);
+            const trackingNumber = $("#tracking-number").val().trim();
+            const button = form.find("button");
+
+            if (!trackingNumber) return;
+
+            button.prop("disabled", true).addClass("loading").html(`
+                <span class="spinner-border spinner-border-sm me-2"></span>
+                Tracking...
+            `);
+
+            $.ajax({
+                url: "{% url 'track_shipment_ajax' %}",
+                type: "GET",
+                data: { tracking_number: trackingNumber },
+                success: function (response) {
+                    if (response.success && response.shipment.tracking_number) {
+                        window.location.href = "{% url 'shipment_detail' 'TRACKING_NUMBER' %}".replace(
+                            "TRACKING_NUMBER",
+                            encodeURIComponent(response.shipment.tracking_number)
+                        );
+                    }
+                },
+                error: function (xhr) {
+                    const message = xhr.responseJSON?.message || "Unable to find shipment.";
+
+                    button.prop("disabled", false).removeClass("loading").html(`
+                        Track Shipment
+                        <i class="bi bi-arrow-right"></i>
+                    `);
+
+                    alert(message);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

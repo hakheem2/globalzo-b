@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Frequently Asked Questions | USPS Globals{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="faq-hero-section">
+    <div class="container">
+        <div class="faq-hero-content">
+            <span class="section-label">FAQ</span>
+
+            <h1>
+                Questions?
+                <span>We've got answers.</span>
+            </h1>
+
+            <p>
+                Find answers to common questions about our shipping services,
+                tracking, delivery, and getting started with USPS Globals.
+            </p>
+
+            <div class="faq-hero-actions">
+                <a href="#faq-list" class="btn btn-primary">
+                    Browse Questions
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+
+                <a href="/contact/" class="faq-hero-link">
+                    Contact us
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="faq-main-section" id="faq-list">
+    <div class="container">
+
+        <div class="faq-main-heading">
+            <span class="section-label">COMMON QUESTIONS</span>
+            <h2>Everything you need to know.</h2>
+            <p>
+                Quick answers to some of the most common questions about
+                shipping with USPS Globals.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-group">
+                <div class="faq-group-title">
+                    <i class="bi bi-box-seam"></i>
+                    <h3>Shipping</h3>
+                </div>
+
+                <div class="accordion" id="shippingFaq">
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#shippingOne">
+                            What shipping services does USPS Globals offer?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="shippingOne" class="collapse" data-bs-parent="#shippingFaq">
+                            <div class="faq-answer">
+                                USPS Globals provides package shipping, international
+                                shipping, freight and cargo support, and shipment tracking.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#shippingTwo">
+                            Do you offer international shipping?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="shippingTwo" class="collapse" data-bs-parent="#shippingFaq">
+                            <div class="faq-answer">
+                                Yes. We coordinate shipments moving between destinations
+                                across borders. Contact us with your origin and destination
+                                to discuss your shipment.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#shippingThree">
+                            How do I request a shipping quote?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="shippingThree" class="collapse" data-bs-parent="#shippingFaq">
+                            <div class="faq-answer">
+                                Use our quote request page and provide your shipment details,
+                                including the origin, destination, package information, and
+                                preferred shipping option.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="faq-group">
+                <div class="faq-group-title">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Tracking & Delivery</h3>
+                </div>
+
+                <div class="accordion" id="trackingFaq">
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#trackingOne">
+                            How can I track my shipment?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="trackingOne" class="collapse" data-bs-parent="#trackingFaq">
+                            <div class="faq-answer">
+                                Enter your shipment tracking number on our tracking page
+                                to view the latest available shipment status and updates.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#trackingTwo">
+                            What information can I see when tracking?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="trackingTwo" class="collapse" data-bs-parent="#trackingFaq">
+                            <div class="faq-answer">
+                                Tracking information can include the shipment status,
+                                current location, timestamp, and relevant tracking notes.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#trackingThree">
+                            What should I do if my shipment is delayed?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="trackingThree" class="collapse" data-bs-parent="#trackingFaq">
+                            <div class="faq-answer">
+                                Check the latest tracking update first. If you need further
+                                assistance, contact our team and provide your tracking number
+                                so we can review the shipment details.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="faq-group">
+                <div class="faq-group-title">
+                    <i class="bi bi-headset"></i>
+                    <h3>Support</h3>
+                </div>
+
+                <div class="accordion" id="supportFaq">
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#supportOne">
+                            How can I contact USPS Globals?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="supportOne" class="collapse" data-bs-parent="#supportFaq">
+                            <div class="faq-answer">
+                                You can contact us through our contact page using the
+                                available contact information and message form.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question collapsed" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#supportTwo">
+                            What information should I provide when contacting you?
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                        <div id="supportTwo" class="collapse" data-bs-parent="#supportFaq">
+                            <div class="faq-answer">
+                                For shipment-related questions, include your tracking number,
+                                the nature of your request, and any relevant shipment details.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="faq-cta-section">
+    <div class="container">
+        <div class="faq-cta-card">
+
+            <div class="faq-cta-content">
+                <span class="section-label">CAN'T FIND YOUR ANSWER?</span>
+
+                <h2>
+                    We're here to
+                    <span>help.</span>
+                </h2>
+
+                <p>
+                    If you still have questions about shipping, tracking,
+                    or our services, reach out to our team directly.
+                </p>
+
+                <div class="faq-cta-actions">
+                    <a href="/contact/" class="btn btn-primary">
+                        Contact Us
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="/quote/" class="faq-cta-link">
+                        Get a Quote
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="faq-cta-visual">
+                <i class="bi bi-chat-dots"></i>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

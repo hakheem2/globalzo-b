@@ -1,0 +1,54 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Customers | USPS Globals{% endblock %}
+{% block page_title %}Customers{% endblock %}
+{% block page_subtitle %}View customers associated with shipments{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-page-top">
+        <div>
+            <h2>Customers</h2>
+            <p>Sender and receiver information from your shipments.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-section-card">
+        {% if customers %}
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Shipments</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for customer in customers %}
+                    <tr>
+                        <td><strong>{{ customer.name }}</strong></td>
+                        <td>{{ customer.email|default:"—" }}</td>
+                        <td>{{ customer.phone|default:"—" }}</td>
+                        <td>{{ customer.shipments }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="dashboard-empty">
+            <i class="bi bi-people"></i>
+            <strong>No customers yet</strong>
+            <span>Customers will appear here when shipments are created.</span>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

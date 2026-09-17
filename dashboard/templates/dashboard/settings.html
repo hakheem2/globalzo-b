@@ -1,0 +1,45 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Settings | USPS Globals{% endblock %}
+{% block page_title %}Settings{% endblock %}
+{% block page_subtitle %}Manage your company information{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-page-top">
+        <div>
+            <h2>Company Settings</h2>
+            <p>Update the information used across your website.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-section-card dashboard-settings-card">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="dashboard-form-grid">
+                {% for field in form %}
+                <div class="dashboard-form-group {% if field.name == 'address' %}full-width{% endif %}">
+                    <label>{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="dashboard-form-error">{{ field.errors|striptags }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="dashboard-form-actions">
+                <button type="submit" class="dashboard-primary-btn">
+                    <i class="bi bi-check-lg"></i>
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

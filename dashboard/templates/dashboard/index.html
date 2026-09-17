@@ -1,0 +1,130 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Dashboard | USPS Globals{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+{% block page_subtitle %}Overview of your shipment operations{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-page-top">
+        <div>
+            <h2>Overview</h2>
+            <p>Monitor your shipments and recent activity.</p>
+        </div>
+
+        <a href="{% url 'dashboard:shipment_add' %}" class="dashboard-primary-btn">
+            <i class="bi bi-plus-lg"></i>
+            Add Shipment
+        </a>
+    </div>
+
+    <div class="dashboard-stat-grid">
+
+        <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon blue">
+                <i class="bi bi-box-seam"></i>
+            </div>
+            <div>
+                <span>Total Shipments</span>
+                <strong>{{ total_shipments }}</strong>
+            </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon orange">
+                <i class="bi bi-clock"></i>
+            </div>
+            <div>
+                <span>Pending</span>
+                <strong>{{ pending_shipments }}</strong>
+            </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon purple">
+                <i class="bi bi-truck"></i>
+            </div>
+            <div>
+                <span>In Transit</span>
+                <strong>{{ in_transit_shipments }}</strong>
+            </div>
+        </div>
+
+        <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon green">
+                <i class="bi bi-check-circle"></i>
+            </div>
+            <div>
+                <span>Delivered</span>
+                <strong>{{ delivered_shipments }}</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dashboard-section-card">
+
+        <div class="dashboard-section-header">
+            <div>
+                <h3>Recent Shipments</h3>
+                <p>Latest shipments added to the system.</p>
+            </div>
+
+            <a href="{% url 'dashboard:shipments' %}" class="dashboard-view-link">
+                View all
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        {% if recent_shipments %}
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Tracking Number</th>
+                        <th>Sender</th>
+                        <th>Destination</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for shipment in recent_shipments %}
+                    <tr>
+                        <td>
+                            <strong>{{ shipment.tracking_number }}</strong>
+                        </td>
+
+                        <td>{{ shipment.sender_name }}</td>
+
+                        <td>{{ shipment.destination }}</td>
+
+                        <td>
+                            <span class="shipment-status status-{{ shipment.status }}">
+                                {{ shipment.get_status_display }}
+                            </span>
+                        </td>
+
+                        <td>{{ shipment.created_at|date:"d M Y" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="dashboard-empty">
+            <i class="bi bi-box-seam"></i>
+            <strong>No shipments yet</strong>
+            <span>Create your first shipment to see it here.</span>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

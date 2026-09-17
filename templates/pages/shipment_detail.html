@@ -1,0 +1,440 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shipment {{ shipment.tracking_number }} | USPS Globals{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/shipment_detail.css' %}">
+
+<!-- Mapbox GL JS CSS -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="shipment-page">
+    <div class="container">
+
+        <!-- Shipment Header -->
+        <div class="shipment-header">
+            <div>
+                <span class="shipment-label">Shipment Tracking</span>
+                <h1>{{ shipment.tracking_number }}</h1>
+                <p>Track the latest movement and delivery information for your shipment.</p>
+            </div>
+            <div class="shipment-status">
+                <span>{{ shipment.get_status_display }}</span>
+            </div>
+        </div>
+
+        <!-- Shipment Overview -->
+        <div class="shipment-card overview-card">
+            <div class="shipment-card-header">
+                <h2>Shipment Overview</h2>
+                <p>General information about this shipment</p>
+            </div>
+
+            <div class="shipment-details-grid">
+                <div>
+                    <span>Tracking Number</span>
+                    <strong>{{ shipment.tracking_number }}</strong>
+                </div>
+                <div>
+                    <span>Agency</span>
+                    <strong>USPS Globals</strong>
+                </div>
+                <div>
+                    <span>Status</span>
+                    <strong>{{ shipment.get_status_display }}</strong>
+                </div>
+                <div>
+                    <span>Shipping Method</span>
+                    <strong>{{ shipment.get_shipping_method_display }}</strong>
+                </div>
+                <div>
+                    <span>Estimated Delivery</span>
+                    <strong>
+                        {% if shipment.estimated_delivery_date %}
+                            {{ shipment.estimated_delivery_date|date:"d M Y" }}
+                        {% else %}
+                            To be confirmed
+                        {% endif %}
+                    </strong>
+                </div>
+                <div>
+                    <span>Shipment Created</span>
+                    <strong>{{ shipment.created_at|date:"d M Y" }}</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sender & Receiver -->
+        <div class="shipment-people-grid">
+
+            <div class="shipment-card">
+                <div class="shipment-card-header">
+                    <h2>Sender Information</h2>
+                    <p>Shipment origin details</p>
+                </div>
+
+                <div class="person-details">
+                    <div>
+                        <span>Name</span>
+                        <strong>{{ shipment.sender_name }}</strong>
+                    </div>
+                    <div>
+                        <span>Phone</span>
+                        <strong>{{ shipment.sender_phone }}</strong>
+                    </div>
+                    {% if shipment.sender_email %}
+                    <div>
+                        <span>Email</span>
+                        <strong>{{ shipment.sender_email }}</strong>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <span>Country</span>
+                        <strong>{{ shipment.sender_country }}</strong>
+                    </div>
+                    <div>
+                        <span>City</span>
+                        <strong>{{ shipment.sender_city }}</strong>
+                    </div>
+                    <div>
+                        <span>Address</span>
+                        <strong>{{ shipment.sender_address }}</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shipment-card">
+                <div class="shipment-card-header">
+                    <h2>Receiver Information</h2>
+                    <p>Shipment destination details</p>
+                </div>
+
+                <div class="person-details">
+                    <div>
+                        <span>Name</span>
+                        <strong>{{ shipment.receiver_name }}</strong>
+                    </div>
+                    <div>
+                        <span>Phone</span>
+                        <strong>{{ shipment.receiver_phone }}</strong>
+                    </div>
+                    {% if shipment.receiver_email %}
+                    <div>
+                        <span>Email</span>
+                        <strong>{{ shipment.receiver_email }}</strong>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <span>Country</span>
+                        <strong>{{ shipment.receiver_country }}</strong>
+                    </div>
+                    <div>
+                        <span>City</span>
+                        <strong>{{ shipment.receiver_city }}</strong>
+                    </div>
+                    <div>
+                        <span>Address</span>
+                        <strong>{{ shipment.receiver_address }}</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Shipment Details -->
+        <div class="shipment-card">
+            <div class="shipment-card-header">
+                <h2>Shipment Details</h2>
+                <p>Package and shipment information</p>
+            </div>
+
+            <div class="shipment-details-grid">
+                <div>
+                    <span>Package Type</span>
+                    <strong>{{ shipment.get_package_type_display }}</strong>
+                </div>
+                <div>
+                    <span>Number of Packages</span>
+                    <strong>{{ shipment.number_of_packages }}</strong>
+                </div>
+                <div>
+                    <span>Weight</span>
+                    <strong>{{ shipment.weight }} kg</strong>
+                </div>
+                {% if shipment.dimensions %}
+                <div>
+                    <span>Dimensions</span>
+                    <strong>{{ shipment.dimensions }}</strong>
+                </div>
+                {% endif %}
+                {% if shipment.description %}
+                <div class="details-wide">
+                    <span>Description</span>
+                    <strong>{{ shipment.description }}</strong>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Route -->
+        <div class="shipment-card route-card">
+            <div class="shipment-card-header">
+                <h2>Shipment Route</h2>
+                <p>Origin and destination</p>
+            </div>
+
+            <div class="shipment-route">
+                <div class="route-point">
+                    <span class="route-dot"></span>
+                    <div>
+                        <small>Origin</small>
+                        <strong>{{ shipment.origin }}</strong>
+                    </div>
+                </div>
+
+                <div class="route-line"></div>
+
+                <div class="route-point">
+                    <span class="route-dot destination"></span>
+                    <div>
+                        <small>Destination</small>
+                        <strong>{{ shipment.destination }}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Location + Journey -->
+        <div class="shipment-grid">
+
+            <div class="shipment-side">
+
+                <div class="shipment-card current-location-card">
+                    <div class="shipment-card-header">
+                        <h2>Current Location</h2>
+                        <p>Latest known shipment position</p>
+                    </div>
+
+                    <div class="current-location">
+                        <span class="location-icon"><i class="bi bi-geo-alt-fill"></i></span>
+                        <div>
+                            <strong>{{ shipment.current_location|default:"Location unavailable" }}</strong>
+                            <span>{{ shipment.get_status_display }}</span>
+                        </div>
+                    </div>
+
+                    {% if shipment.tracking_note %}
+                    <div class="tracking-note">
+                        {{ shipment.tracking_note }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="shipment-card delivery-card">
+                    <span>Estimated Delivery</span>
+                    <strong>
+                        {% if shipment.estimated_delivery_date %}
+                            {{ shipment.estimated_delivery_date|date:"d M Y" }}
+                        {% else %}
+                            To be confirmed
+                        {% endif %}
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="shipment-card shipment-journey">
+                <div class="shipment-card-header">
+                    <h2>Shipment Journey</h2>
+                    <p>Latest tracking activity</p>
+                </div>
+
+                <div class="tracking-timeline">
+                    {% for update in shipment.tracking_updates.all %}
+                    <div class="timeline-item {% if forloop.first %}active{% endif %}">
+                        <div class="timeline-marker"></div>
+
+                        <div class="timeline-content">
+                            <div class="timeline-top">
+                                <h3>{{ update.get_status_display }}</h3>
+                                <span>{{ update.created_at|date:"d M Y, H:i" }}</span>
+                            </div>
+
+                            <strong>{{ update.location }}</strong>
+
+                            {% if update.note %}
+                            <p>{{ update.note }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="tracking-empty">
+                        <p>No tracking updates available yet.</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            
+        </div>
+
+        <!-- Map -->
+        <div class="shipment-map-card">
+            <div class="shipment-map-header">
+                <div class="shipment-card-header">
+                    <h2>Shipment Location</h2>
+                    <p>Current shipment position</p>
+                </div>
+
+                <div class="map-legend">
+                    <div><span class="map-dot origin"></span>Origin</div>
+                    <div><span class="map-dot current"></span>Current Location</div>
+                    <div><span class="map-dot destination"></span>Final Destination</div>
+                </div>
+            </div>
+
+            <div id="shipment-map"></div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        mapboxgl.accessToken = "{{ MAPBOX_ACCESS_TOKEN }}";
+
+        const origin = [
+            {{ shipment.origin_longitude|default:"null" }},
+            {{ shipment.origin_latitude|default:"null" }}
+        ];
+        const current = [
+            {{ shipment.current_longitude|default:"null" }},
+            {{ shipment.current_latitude|default:"null" }}
+        ];
+        const destination = [
+            {{ shipment.destination_longitude|default:"null" }},
+            {{ shipment.destination_latitude|default:"null" }}
+        ];
+
+        const validPoint = point => point[0] !== null && point[1] !== null;
+
+        if (!validPoint(origin) || !validPoint(destination)) {
+            document.getElementById("shipment-map").innerHTML = `
+                <div class="map-unavailable">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Shipment route information is not available.</span>
+                </div>
+            `;
+            return;
+        }
+
+        const map = new mapboxgl.Map({
+            container: "shipment-map",
+            style: "mapbox://styles/mapbox/streets-v12",
+            center: current[0] !== null ? current : origin,
+            zoom: 6
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        map.on("load", async function () {
+            const coordinates = validPoint(current)
+                ? `${origin.join(",")};${current.join(",")};${destination.join(",")}`
+                : `${origin.join(",")};${destination.join(",")}`;
+
+            const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${coordinates}?geometries=geojson&overview=full&access_token=${mapboxgl.accessToken}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (!data.routes || !data.routes.length) {
+                    return;
+                }
+
+                const route = data.routes[0].geometry;
+
+                map.addSource("shipment-route", {
+                    type: "geojson",
+                    data: {
+                        type: "Feature",
+                        properties: {},
+                        geometry: route
+                    }
+                });
+
+                map.addLayer({
+                    id: "shipment-route-line",
+                    type: "line",
+                    source: "shipment-route",
+                    layout: {
+                        "line-cap": "round",
+                        "line-join": "round"
+                    },
+                    paint: {
+                        "line-color": "#0b6bcb",
+                        "line-width": 5,
+                        "line-opacity": 0.85
+                    }
+                });
+
+                const bounds = new mapboxgl.LngLatBounds();
+
+                [origin, current, destination].forEach(function (point) {
+                    if (validPoint(point)) {
+                        bounds.extend(point);
+                    }
+                });
+
+                map.fitBounds(bounds, {
+                    padding: 1,
+                    maxZoom: 4,
+                    duration: 800
+                });
+
+            } catch (error) {
+                console.error("Mapbox route error:", error);
+            }
+
+            new mapboxgl.Marker({color: "#102033"})
+                .setLngLat(origin)
+                .setPopup(
+                    new mapboxgl.Popup({offset: 25}).setHTML(`
+                        <strong>Origin</strong><br>
+                        {{ shipment.origin|escapejs }}
+                    `)
+                )
+                .addTo(map);
+
+            {% if shipment.current_latitude and shipment.current_longitude %}
+            new mapboxgl.Marker({color: "#0b6bcb"})
+                .setLngLat(current)
+                .setPopup(
+                    new mapboxgl.Popup({offset: 25}).setHTML(`
+                        <strong>Current Location</strong><br>
+                        {{ shipment.current_location|escapejs }}
+                    `)
+                )
+                .addTo(map);
+            {% endif %}
+
+            new mapboxgl.Marker({color: "#087c4e"})
+                .setLngLat(destination)
+                .setPopup(
+                    new mapboxgl.Popup({offset: 25}).setHTML(`
+                        <strong>Destination</strong><br>
+                        {{ shipment.destination|escapejs }}
+                    `)
+                )
+                .addTo(map);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Reports | USPS Globals{% endblock %}
+{% block page_title %}Reports{% endblock %}
+{% block page_subtitle %}Shipment activity and operational statistics{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-page-top">
+        <div>
+            <h2>Shipment Reports</h2>
+            <p>A quick overview of your shipment activity.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-stat-grid">
+        <div class="dashboard-stat-card">
+            <div class="dashboard-stat-icon blue">
+                <i class="bi bi-box-seam"></i>
+            </div>
+            <div>
+                <span>Total Shipments</span>
+                <strong>{{ total_shipments }}</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="reports-grid">
+
+        <div class="dashboard-section-card">
+            <div class="dashboard-section-header">
+                <div>
+                    <h3>Shipments by Status</h3>
+                    <p>Current shipment distribution.</p>
+                </div>
+            </div>
+
+            <div class="report-list">
+                {% for item in status_counts %}
+                <div class="report-row">
+                    <span>{{ item.status|title|cut:"_" }}</span>
+                    <strong>{{ item.total }}</strong>
+                </div>
+                {% empty %}
+                <div class="dashboard-empty">
+                    <span>No shipment data available.</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="dashboard-section-card">
+            <div class="dashboard-section-header">
+                <div>
+                    <h3>Shipping Methods</h3>
+                    <p>Express and standard shipments.</p>
+                </div>
+            </div>
+
+            <div class="report-list">
+                {% for item in method_counts %}
+                <div class="report-row">
+                    <span>{{ item.shipping_method|title }}</span>
+                    <strong>{{ item.total }}</strong>
+                </div>
+                {% empty %}
+                <div class="dashboard-empty">
+                    <span>No shipment data available.</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

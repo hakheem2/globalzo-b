@@ -1,0 +1,439 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shipping & Logistics Services | USPS Globals{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Services Hero -->
+<section class="services-hero-section">
+    <div class="container">
+        <div class="services-hero-grid">
+
+            <div class="services-hero-content">
+                <span class="section-label">OUR SERVICES</span>
+
+                <h1>
+                    Shipping solutions
+                    <span>built around you.</span>
+                </h1>
+
+                <p>
+                    From local shipments to international deliveries,
+                    USPS Globals provides practical logistics solutions
+                    designed to keep your goods moving.
+                </p>
+
+                <div class="services-hero-actions">
+                    <a href="/quote/" class="btn btn-primary">
+                        Get a Quote
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="/track/" class="services-hero-link">
+                        Track a shipment
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="services-hero-visual">
+                <div class="services-hero-card">
+
+                    <div class="services-hero-grid-lines"></div>
+
+                    <div class="services-route services-route-one"></div>
+                    <div class="services-route services-route-two"></div>
+
+                    <div class="services-node services-node-one">
+                        <span></span>
+                        <strong>Origin</strong>
+                    </div>
+
+                    <div class="services-node services-node-two">
+                        <span></span>
+                        <strong>Transit</strong>
+                    </div>
+
+                    <div class="services-node services-node-three">
+                        <span></span>
+                        <strong>Destination</strong>
+                    </div>
+
+                    <div class="services-package">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div class="services-hero-status">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <div>
+                            <strong>Shipment in progress</strong>
+                            <span>Moving toward destination</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Core Services -->
+<section class="core-services-section">
+    <div class="container">
+
+        <div class="core-services-heading">
+            <span class="section-label">WHAT WE DO</span>
+            <h2>Shipping services designed to keep things moving.</h2>
+            <p>
+                Practical logistics solutions for individuals and businesses,
+                with a focus on reliable coordination and clear communication.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card service-card-featured">
+                <div class="service-icon">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <span class="service-number">01</span>
+                <h3>Package Shipping</h3>
+                <p>
+                    Reliable handling and transportation of packages from
+                    pickup through delivery.
+                </p>
+                <a href="/quote/" class="service-link">
+                    Request a quote
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="bi bi-globe2"></i>
+                </div>
+                <span class="service-number">02</span>
+                <h3>International Shipping</h3>
+                <p>
+                    Shipping coordination for packages and goods moving
+                    between destinations across borders.
+                </p>
+                <a href="/quote/" class="service-link">
+                    Request a quote
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+                <span class="service-number">03</span>
+                <h3>Freight & Cargo</h3>
+                <p>
+                    Logistics support for larger shipments requiring
+                    organized transportation and handling.
+                </p>
+                <a href="/quote/" class="service-link">
+                    Request a quote
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <span class="service-number">04</span>
+                <h3>Shipment Tracking</h3>
+                <p>
+                    Stay informed with shipment tracking and updates as
+                    your package progresses toward its destination.
+                </p>
+                <a href="/track/" class="service-link">
+                    Track a shipment
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- How We Handle Shipments -->
+<section class="process-section">
+    <div class="container">
+
+        <div class="process-heading">
+            <span class="section-label">HOW IT WORKS</span>
+            <h2>A straightforward process from pickup to delivery.</h2>
+            <p>
+                We keep the shipping journey organized so you know what
+                happens at every important stage.
+            </p>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <div class="process-icon">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <h3>Request</h3>
+                <p>
+                    Tell us what you are shipping, where it is going,
+                    and the service you need.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <div class="process-icon">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <h3>Prepare</h3>
+                <p>
+                    We organize the shipment details and coordinate
+                    the required logistics.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <div class="process-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+                <h3>Move</h3>
+                <p>
+                    Your shipment begins its journey toward the
+                    specified destination.
+                </p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <div class="process-icon">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <h3>Deliver</h3>
+                <p>
+                    We work toward a smooth delivery while keeping
+                    you informed along the way.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Shipping Options -->
+<section class="shipping-options-section">
+    <div class="container">
+
+        <div class="shipping-options-heading">
+            <span class="section-label">SHIPPING OPTIONS</span>
+            <h2>Choose the service that fits your shipment.</h2>
+            <p>
+                Different shipments have different requirements. We provide
+                flexible options based on destination, timing, and shipment size.
+            </p>
+        </div>
+
+        <div class="shipping-options-grid">
+
+            <div class="shipping-option-card">
+                <div class="shipping-option-top">
+                    <div class="shipping-option-icon">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <span>01</span>
+                </div>
+
+                <h3>Express Shipping</h3>
+
+                <p>
+                    A faster shipping option for time-sensitive packages
+                    and deliveries that need priority handling.
+                </p>
+
+                <div class="shipping-option-features">
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Priority handling</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Faster delivery</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Shipment tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shipping-option-card shipping-option-featured">
+                <div class="shipping-option-top">
+                    <div class="shipping-option-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <span>02</span>
+                </div>
+
+                <h3>Standard Shipping</h3>
+
+                <p>
+                    A practical option for shipments where dependable
+                    transportation and delivery timing are the priority.
+                </p>
+
+                <div class="shipping-option-features">
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Reliable transportation</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Flexible delivery</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Shipment tracking</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Why Our Services -->
+<section class="services-benefits-section">
+    <div class="container">
+
+        <div class="services-benefits-grid">
+
+            <div class="services-benefits-content">
+                <span class="section-label">WHY USPS GLOBALS</span>
+
+                <h2>
+                    More than moving packages.
+                    <span>Moving them with purpose.</span>
+                </h2>
+
+                <p>
+                    Our services are built around the things that matter
+                    most when shipping: dependable coordination, visibility,
+                    and responsive support.
+                </p>
+
+                <a href="/contact/" class="services-benefits-link">
+                    Speak with our team
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="services-benefits-list">
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div>
+                        <h3>Reliable Coordination</h3>
+                        <p>
+                            We keep shipment details organized from
+                            beginning to end.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <div>
+                        <h3>Clear Visibility</h3>
+                        <p>
+                            Track progress and stay informed throughout
+                            the shipment journey.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <div>
+                        <h3>Responsive Support</h3>
+                        <p>
+                            Get assistance when you need help with your
+                            shipment or delivery.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Final CTA -->
+<section class="services-cta-section">
+    <div class="container">
+        <div class="services-cta-card">
+
+            <div class="services-cta-content">
+                <span class="section-label">READY TO SHIP?</span>
+
+                <h2>
+                    Let's get your shipment
+                    <span>moving.</span>
+                </h2>
+
+                <p>
+                    Tell us what you're shipping and where it needs to go.
+                    We'll help you find the right shipping solution.
+                </p>
+
+                <div class="services-cta-actions">
+                    <a href="/quote/" class="btn btn-primary">
+                        Get a Quote
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="/contact/" class="services-cta-link">
+                        Contact us
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="services-cta-icon">
+                <i class="bi bi-send"></i>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

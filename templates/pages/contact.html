@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact USPS Globals | Shipping & Logistics{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero-section">
+    <div class="container">
+        <div class="contact-hero-grid">
+
+            <div class="contact-hero-content">
+                <span class="section-label">GET IN TOUCH</span>
+
+                <h1>
+                    Let's talk about
+                    <span>your shipment.</span>
+                </h1>
+
+                <p>
+                    Have a question about shipping, tracking, or our logistics
+                    services? Reach out to USPS Globals and we'll help you
+                    find the right way forward.
+                </p>
+
+                <div class="contact-hero-actions">
+                    <a href="#contact-form" class="btn btn-primary">
+                        Send a Message
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+
+                    <a href="/track/" class="contact-hero-link">
+                        Track a shipment
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-hero-visual">
+                <div class="contact-hero-card">
+                    <div class="contact-hero-glow"></div>
+
+                    <div class="contact-hero-icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+
+                    <div class="contact-hero-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="contact-hero-status">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <div>
+                            <strong>We're here to help</strong>
+                            <span>Questions, shipments & support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="contact-main-section" id="contact-form">
+    <div class="container">
+        <div class="contact-main-grid">
+
+            <div class="contact-info">
+                <span class="section-label">CONTACT US</span>
+                <h2>We're ready to help.</h2>
+                <p>
+                    Whether you need help with a shipment, want to learn more
+                    about our services, or have a general question, send us a message.
+                </p>
+
+                <div class="contact-info-list">
+
+                    {% if site_settings and site_settings.email %}
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <span>Email us</span>
+                            <a href="mailto:{{ site_settings.email }}">
+                                {{ site_settings.email }}
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site_settings and site_settings.phone %}
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <span>Call us</span>
+                            <a href="tel:{{ site_settings.phone }}">
+                                {{ site_settings.phone }}
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site_settings and site_settings.address %}
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <span>Our location</span>
+                            <strong>{{ site_settings.address }}</strong>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+                <div class="contact-info-note">
+                    <i class="bi bi-info-circle"></i>
+                    <span>For shipment-specific assistance, please include your tracking number in your message.</span>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <div class="contact-form-heading">
+                    <h3>Send us a message</h3>
+                    <p>Fill out the form below and tell us how we can help.</p>
+                </div>
+
+                <form>
+                    <div class="contact-form-row">
+                        <div class="contact-form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Your full name">
+                        </div>
+
+                        <div class="contact-form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="contact-form-row">
+                        <div class="contact-form-group">
+                            <label for="contact-phone">Phone <span>(Optional)</span></label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="Your phone number">
+                        </div>
+
+                        <div class="contact-form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="How can we help?">
+                        </div>
+                    </div>
+
+                    <div class="contact-form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Tell us about your request..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary contact-submit">
+                        Send Message
+                        <i class="bi bi-arrow-up-right"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-reasons-section">
+    <div class="container">
+        <div class="contact-reasons-heading">
+            <span class="section-label">WHY CONTACT US</span>
+            <h2>Whatever you need, we're here to help.</h2>
+            <p>
+                From getting started with a shipment to resolving a delivery
+                question, our team is available to help you move forward.
+            </p>
+        </div>
+
+        <div class="contact-reasons-grid">
+
+            <div class="contact-reason-card">
+                <div class="contact-reason-icon">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+                <span>01</span>
+                <h3>Shipping Assistance</h3>
+                <p>
+                    Need help choosing the right shipping option or preparing
+                    your shipment? We can help.
+                </p>
+            </div>
+
+            <div class="contact-reason-card">
+                <div class="contact-reason-icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <span>02</span>
+                <h3>Shipment Support</h3>
+                <p>
+                    Have a question about a shipment already in transit?
+                    Send us the relevant details and we'll assist.
+                </p>
+            </div>
+
+            <div class="contact-reason-card">
+                <div class="contact-reason-icon">
+                    <i class="bi bi-chat-square-text"></i>
+                </div>
+                <span>03</span>
+                <h3>General Questions</h3>
+                <p>
+                    Looking for more information about USPS Globals or our
+                    services? We'd be happy to hear from you.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="contact-faq-section">
+    <div class="container">
+        <div class="contact-faq-card">
+
+            <div class="contact-faq-icon">
+                <i class="bi bi-question-circle"></i>
+            </div>
+
+            <div class="contact-faq-content">
+                <span class="section-label">NEED QUICK ANSWERS?</span>
+                <h2>Check our frequently asked questions.</h2>
+                <p>
+                    Find answers to common questions about shipping,
+                    tracking, delivery, and our services.
+                </p>
+            </div>
+
+            <a href="/faq/" class="contact-faq-link">
+                Visit FAQ
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="contact-cta-section">
+    <div class="container">
+        <div class="contact-cta-card">
+            <div class="contact-cta-content">
+                <span class="section-label">LET'S GET MOVING</span>
+                <h2>
+                    Have a shipment
+                    <span>in mind?</span>
+                </h2>
+                <p>
+                    Tell us what you need and we'll help you take the next step.
+                </p>
+
+                <div class="contact-cta-actions">
+                    <a href="/quote/" class="btn btn-primary">
+                        Get a Quote
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                    <a href="/services/" class="contact-cta-link">
+                        Explore Services
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-cta-visual">
+                <i class="bi bi-send"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

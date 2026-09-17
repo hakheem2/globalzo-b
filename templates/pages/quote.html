@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Request a Shipping Quote | USPS Globals{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/quote.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="quote-hero-section">
+    <div class="container">
+        <div class="quote-hero-grid">
+
+            <div class="quote-hero-content">
+                <span class="section-label">REQUEST A QUOTE</span>
+
+                <h1>
+                    Let's plan your
+                    <span>next shipment.</span>
+                </h1>
+
+                <p>
+                    Tell us where your shipment is coming from, where it needs
+                    to go, and what you're sending. We'll use the details to
+                    understand your shipping requirements.
+                </p>
+
+                <div class="quote-hero-actions">
+                    <a href="#quote-form" class="btn btn-primary">
+                        Start Your Quote
+                        <i class="bi bi-arrow-down"></i>
+                    </a>
+
+                    <a href="/services/" class="quote-hero-link">
+                        View Services
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="quote-hero-visual">
+                <div class="quote-hero-card">
+
+                    <div class="quote-route-line"></div>
+
+                    <div class="quote-route-point quote-route-origin">
+                        <span></span>
+                        <strong>Origin</strong>
+                    </div>
+
+                    <div class="quote-route-point quote-route-destination">
+                        <span></span>
+                        <strong>Destination</strong>
+                    </div>
+
+                    <div class="quote-package">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+
+                    <div class="quote-hero-info">
+                        <i class="bi bi-calculator"></i>
+                        <div>
+                            <strong>Shipment details</strong>
+                            <span>Tell us what you're sending</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="quote-form-section" id="quote-form">
+    <div class="container">
+        <div class="quote-form-heading">
+            <span class="section-label">SHIPMENT DETAILS</span>
+            <h2>Tell us about your shipment.</h2>
+            <p>
+                Provide the basic details below so we can understand your
+                shipping requirements.
+            </p>
+        </div>
+
+        <div class="quote-form-card">
+            <form>
+
+                <div class="quote-form-section-title">
+                    <i class="bi bi-person"></i>
+                    <div>
+                        <h3>Your Information</h3>
+                        <p>How can we reach you?</p>
+                    </div>
+                </div>
+
+                <div class="quote-form-row">
+                    <div class="quote-form-group">
+                        <label for="quote-name">Full Name</label>
+                        <input type="text" id="quote-name" name="name" placeholder="Your full name">
+                    </div>
+
+                    <div class="quote-form-group">
+                        <label for="quote-email">Email Address</label>
+                        <input type="email" id="quote-email" name="email" placeholder="you@example.com">
+                    </div>
+                </div>
+
+                <div class="quote-form-group">
+                    <label for="quote-phone">Phone Number</label>
+                    <input type="tel" id="quote-phone" name="phone" placeholder="Your phone number">
+                </div>
+
+                <div class="quote-form-divider"></div>
+
+                <div class="quote-form-section-title">
+                    <i class="bi bi-arrow-left-right"></i>
+                    <div>
+                        <h3>Shipping Route</h3>
+                        <p>Where is your shipment coming from and going to?</p>
+                    </div>
+                </div>
+
+                <div class="quote-form-row">
+                    <div class="quote-form-group">
+                        <label for="quote-origin">Origin</label>
+                        <input type="text" id="quote-origin" name="origin" placeholder="City, Country">
+                    </div>
+
+                    <div class="quote-form-group">
+                        <label for="quote-destination">Destination</label>
+                        <input type="text" id="quote-destination" name="destination" placeholder="City, Country">
+                    </div>
+                </div>
+
+                <div class="quote-form-divider"></div>
+
+                <div class="quote-form-section-title">
+                    <i class="bi bi-box-seam"></i>
+                    <div>
+                        <h3>Package Information</h3>
+                        <p>Tell us about what you're shipping.</p>
+                    </div>
+                </div>
+
+                <div class="quote-form-row">
+                    <div class="quote-form-group">
+                        <label for="quote-package">Package Type</label>
+                        <select id="quote-package" name="package_type">
+                            <option value="">Select package type</option>
+                            <option value="document">Document</option>
+                            <option value="parcel">Parcel</option>
+                            <option value="box">Box</option>
+                            <option value="cargo">Cargo</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="quote-form-group">
+                        <label for="quote-packages">Number of Packages</label>
+                        <input type="number" id="quote-packages" name="packages" min="1" placeholder="e.g. 2">
+                    </div>
+                </div>
+
+                <div class="quote-form-row">
+                    <div class="quote-form-group">
+                        <label for="quote-weight">Approximate Weight</label>
+                        <input type="text" id="quote-weight" name="weight" placeholder="e.g. 10 kg">
+                    </div>
+
+                    <div class="quote-form-group">
+                        <label for="quote-method">Preferred Shipping</label>
+                        <select id="quote-method" name="shipping_method">
+                            <option value="">Select an option</option>
+                            <option value="express">Express Shipping</option>
+                            <option value="standard">Standard Shipping</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="quote-form-group">
+                    <label for="quote-description">Shipment Description</label>
+                    <textarea id="quote-description" name="description" rows="5"
+                              placeholder="Briefly describe what you are shipping..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary quote-submit">
+                    Request Quote
+                    <i class="bi bi-arrow-up-right"></i>
+                </button>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<section class="quote-process-section">
+    <div class="container">
+        <div class="quote-process-heading">
+            <span class="section-label">WHAT HAPPENS NEXT</span>
+            <h2>Simple from request to shipment.</h2>
+            <p>
+                Once we receive your request, the next steps are straightforward.
+            </p>
+        </div>
+
+        <div class="quote-process-grid">
+
+            <div class="quote-process-step">
+                <span>01</span>
+                <div class="quote-process-icon">
+                    <i class="bi bi-send"></i>
+                </div>
+                <h3>Submit Your Request</h3>
+                <p>
+                    Send us your shipment and contact details through the quote form.
+                </p>
+            </div>
+
+            <div class="quote-process-step">
+                <span>02</span>
+                <div class="quote-process-icon">
+                    <i class="bi bi-clipboard-check"></i>
+                </div>
+                <h3>We Review</h3>
+                <p>
+                    We review the information provided to understand your shipping requirements.
+                </p>
+            </div>
+
+            <div class="quote-process-step">
+                <span>03</span>
+                <div class="quote-process-icon">
+                    <i class="bi bi-chat-square-text"></i>
+                </div>
+                <h3>Discuss Details</h3>
+                <p>
+                    We can follow up with you if additional shipment information is needed.
+                </p>
+            </div>
+
+            <div class="quote-process-step">
+                <span>04</span>
+                <div class="quote-process-icon">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <h3>Plan Your Shipment</h3>
+                <p>
+                    Once the details are confirmed, we can move forward with the shipment arrangements.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="quote-cta-section">
+    <div class="container">
+        <div class="quote-cta-card">
+            <div class="quote-cta-content">
+                <span class="section-label">READY TO SHIP?</span>
+
+                <h2>
+                    Let's move your
+                    <span>shipment forward.</span>
+                </h2>
+
+                <p>
+                    Have more questions before requesting a quote?
+                    Our team is ready to help.
+                </p>
+
+                <div class="quote-cta-actions">
+                    <a href="/contact/" class="btn btn-primary">
+                        Contact Us
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="/track/" class="quote-cta-link">
+                        Track a Shipment
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="quote-cta-visual">
+                <i class="bi bi-send"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

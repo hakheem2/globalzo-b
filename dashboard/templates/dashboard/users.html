@@ -1,0 +1,73 @@
+{% extends "dashboard/base.html" %}
+
+{% block title %}Users | USPS Globals{% endblock %}
+{% block page_title %}Users{% endblock %}
+{% block page_subtitle %}Manage dashboard users and access{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-page-top">
+        <div>
+            <h2>System Users</h2>
+            <p>Users who have access to the management system.</p>
+        </div>
+
+        <a href="/admin/auth/user/add/" class="dashboard-primary-btn">
+            <i class="bi bi-plus-lg"></i>
+            Add User
+        </a>
+    </div>
+
+    <div class="dashboard-section-card">
+        <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td><strong>{{ user.username }}</strong></td>
+
+                        <td>
+                            {{ user.get_full_name|default:"—" }}
+                        </td>
+
+                        <td>{{ user.email|default:"—" }}</td>
+
+                        <td>
+                            {% if user.is_superuser %}
+                                Super Admin
+                            {% elif user.is_staff %}
+                                Staff
+                            {% else %}
+                                User
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if user.is_active %}
+                                <span class="shipment-status status-delivered">Active</span>
+                            {% else %}
+                                <span class="shipment-status status-cancelled">Inactive</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

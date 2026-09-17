@@ -1,0 +1,1188 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}USPS Globals | Global Shipping & Logistics{% endblock %}
+
+{% block meta_description %}USPS Globals provides reliable shipping, logistics, freight and delivery solutions worldwide.{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+   <div class="container">
+      <div class="row align-items-center g-5">
+
+         <div class="col-lg-6">
+            <div class="hero-content">
+               <span class="hero-eyebrow">
+                  <span class="hero-eyebrow-dot"></span>
+                  GLOBAL LOGISTICS & SHIPPING
+               </span>
+
+               <h1>
+                  Moving what matters,
+                  <span>where it needs to go.</span>
+               </h1>
+
+               <p class="hero-text">
+                  Reliable shipping and logistics solutions designed to move
+                  packages, cargo, and business shipments safely across borders.
+               </p>
+
+               <div class="hero-actions">
+                  <a href="/quote/" class="btn btn-primary">
+                     Get a Quote
+                     <i class="bi bi-arrow-up-right"></i>
+                  </a>
+
+                  <a href="/track/" class="hero-track-link">
+                     <span class="hero-track-icon">
+                        <i class="bi bi-geo-alt"></i>
+                     </span>
+                     Track a Shipment
+                  </a>
+               </div>
+
+               <div class="hero-trust">
+                  <div class="hero-trust-item">
+                     <i class="bi bi-shield-check"></i>
+                     <span>Secure Handling</span>
+                  </div>
+
+                  <div class="hero-trust-item">
+                     <i class="bi bi-globe2"></i>
+                     <span>Global Reach</span>
+                  </div>
+
+                  <div class="hero-trust-item">
+                     <i class="bi bi-headset"></i>
+                     <span>Dedicated Support</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-6">
+            <div class="hero-visual">
+
+               <div class="hero-glow hero-glow-one"></div>
+               <div class="hero-glow hero-glow-two"></div>
+
+               <div class="hero-map-card">
+                  <div class="map-grid"></div>
+
+                  <div class="map-route route-one"></div>
+                  <div class="map-route route-two"></div>
+
+                  <div class="map-point point-origin">
+                     <span></span>
+                     <div>
+                        <strong>Texas</strong>
+                        <small>Origin</small>
+                     </div>
+                  </div>
+
+                  <div class="map-point point-current">
+                     <span></span>
+                     <div>
+                        <strong>Transit</strong>
+                        <small>In Transit</small>
+                     </div>
+                  </div>
+
+                  <div class="map-point point-destination">
+                     <span></span>
+                     <div>
+                        <strong>Destination</strong>
+                        <small>On Route</small>
+                     </div>
+                  </div>
+
+                  <div class="shipment-marker">
+                     <i class="bi bi-box-seam"></i>
+                  </div>
+
+                  <div class="map-label">
+                     <i class="bi bi-broadcast"></i>
+                     Live Shipment Route
+                  </div>
+               </div>
+
+               <div class="hero-floating-card hero-status-card">
+                  <div class="floating-icon">
+                     <i class="bi bi-check-lg"></i>
+                  </div>
+
+                  <div>
+                     <small>Shipment Status</small>
+                     <strong>In Transit</strong>
+                  </div>
+
+                  <span class="status-dot"></span>
+               </div>
+
+               <div class="hero-floating-card hero-delivery-card">
+                  <div class="delivery-icon">
+                     <i class="bi bi-box-seam"></i>
+                  </div>
+
+                  <div>
+                     <strong>On the move</strong>
+                     <small>Shipment #USPG-20481</small>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <div class="hero-bottom-fade"></div>
+</section>
+
+
+<!-- Trust Statistics -->
+<section class="stats-section">
+   <div class="container">
+      <div class="stats-wrapper">
+
+         <div class="stat-item">
+            <div class="stat-icon">
+               <i class="bi bi-box-seam"></i>
+            </div>
+            <div class="stat-content">
+               <strong>25K+</strong>
+               <span>Shipments Delivered</span>
+            </div>
+         </div>
+
+         <div class="stat-item">
+            <div class="stat-icon">
+               <i class="bi bi-globe2"></i>
+            </div>
+            <div class="stat-content">
+               <strong>45+</strong>
+               <span>Countries Served</span>
+            </div>
+         </div>
+
+         <div class="stat-item">
+            <div class="stat-icon">
+               <i class="bi bi-clock-history"></i>
+            </div>
+            <div class="stat-content">
+               <strong>98%</strong>
+               <span>On-Time Delivery</span>
+            </div>
+         </div>
+
+         <div class="stat-item">
+            <div class="stat-icon">
+               <i class="bi bi-star-fill"></i>
+            </div>
+            <div class="stat-content">
+               <strong>4.9/5</strong>
+               <span>Customer Rating</span>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</section>
+
+
+<!-- Services Section -->
+<section class="services-section">
+   <div class="container">
+
+      <div class="services-heading">
+         <div>
+            <span class="section-label">WHAT WE DO</span>
+            <h2>Shipping solutions built around your needs.</h2>
+         </div>
+
+         <p>
+            USPS Globals provides dependable shipping and logistics solutions
+            for individuals, businesses, and organizations moving goods locally
+            and internationally.
+         </p>
+      </div>
+
+      <div class="services-grid">
+
+         <article class="service-card service-card-featured">
+            <div class="service-card-top">
+               <span class="service-number">01</span>
+               <div class="service-icon">
+                  <i class="bi bi-lightning-charge"></i>
+               </div>
+            </div>
+
+            <div class="service-card-content">
+               <span class="service-tag">FAST DELIVERY</span>
+               <h3>Express Shipping</h3>
+               <p>
+                  Time-sensitive shipments handled with speed, care,
+                  and reliable delivery coordination.
+               </p>
+
+               <a href="/services/" class="service-link">
+                  Explore service
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+            </div>
+
+            <div class="service-card-decoration">
+               <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+         </article>
+
+         <article class="service-card">
+            <div class="service-card-top">
+               <span class="service-number">02</span>
+               <div class="service-icon">
+                  <i class="bi bi-box-seam"></i>
+               </div>
+            </div>
+
+            <div class="service-card-content">
+               <span class="service-tag">PACKAGE DELIVERY</span>
+               <h3>Package Shipping</h3>
+               <p>
+                  Safe and organized transportation for personal,
+                  commercial, and business packages.
+               </p>
+
+               <a href="/services/" class="service-link">
+                  Explore service
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+            </div>
+         </article>
+
+         <article class="service-card">
+            <div class="service-card-top">
+               <span class="service-number">03</span>
+               <div class="service-icon">
+                  <i class="bi bi-globe2"></i>
+               </div>
+            </div>
+
+            <div class="service-card-content">
+               <span class="service-tag">GLOBAL REACH</span>
+               <h3>International Shipping</h3>
+               <p>
+                  Cross-border shipping support designed to simplify
+                  international movement of your goods.
+               </p>
+
+               <a href="/services/" class="service-link">
+                  Explore service
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+            </div>
+         </article>
+
+         <article class="service-card">
+            <div class="service-card-top">
+               <span class="service-number">04</span>
+               <div class="service-icon">
+                  <i class="bi bi-truck"></i>
+               </div>
+            </div>
+
+            <div class="service-card-content">
+               <span class="service-tag">CARGO</span>
+               <h3>Freight & Cargo</h3>
+               <p>
+                  Flexible logistics solutions for larger shipments,
+                  commercial cargo, and business transportation needs.
+               </p>
+
+               <a href="/services/" class="service-link">
+                  Explore service
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+            </div>
+         </article>
+
+         <article class="service-card">
+            <div class="service-card-top">
+               <span class="service-number">05</span>
+               <div class="service-icon">
+                  <i class="bi bi-building"></i>
+               </div>
+            </div>
+
+            <div class="service-card-content">
+               <span class="service-tag">BUSINESS LOGISTICS</span>
+               <h3>Business Logistics</h3>
+               <p>
+                  Practical logistics support for businesses that need
+                  consistent and dependable shipping operations.
+               </p>
+
+               <a href="/services/" class="service-link">
+                  Explore service
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+            </div>
+         </article>
+
+      </div>
+
+      <div class="services-bottom">
+         <div class="services-bottom-content">
+            <i class="bi bi-info-circle"></i>
+            <span>
+               Need a shipping solution tailored to your requirements?
+            </span>
+         </div>
+
+         <a href="/quote/" class="btn btn-primary">
+            Request a Quote
+            <i class="bi bi-arrow-up-right"></i>
+         </a>
+      </div>
+
+   </div>
+</section>
+
+
+<!-- How It Works Section -->
+<section class="how-it-works-section">
+   <div class="container">
+
+      <div class="how-heading">
+         <div>
+            <span class="section-label">HOW IT WORKS</span>
+            <h2>From pickup to delivery, every step stays clear.</h2>
+         </div>
+
+         <p>
+            Our shipping process keeps you informed from the moment
+            your shipment is requested until it reaches its destination.
+         </p>
+      </div>
+
+      <div class="shipment-process">
+
+         <div class="process-line">
+            <span></span>
+         </div>
+
+         <div class="process-step active">
+            <div class="process-icon">
+               <i class="bi bi-file-earmark-text"></i>
+            </div>
+
+            <span class="process-number">01</span>
+            <h3>Request</h3>
+            <p>
+               Tell us what you need shipped and where it needs to go.
+            </p>
+         </div>
+
+         <div class="process-step">
+            <div class="process-icon">
+               <i class="bi bi-box-seam"></i>
+            </div>
+
+            <span class="process-number">02</span>
+            <h3>Pickup</h3>
+            <p>
+               Your shipment is collected and prepared for transportation.
+            </p>
+         </div>
+
+         <div class="process-step">
+            <div class="process-icon">
+               <i class="bi bi-truck"></i>
+            </div>
+
+            <span class="process-number">03</span>
+            <h3>In Transit</h3>
+            <p>
+               Your shipment moves through its planned logistics route.
+            </p>
+         </div>
+
+         <div class="process-step">
+            <div class="process-icon">
+               <i class="bi bi-house-check"></i>
+            </div>
+
+            <span class="process-number">04</span>
+            <h3>Delivered</h3>
+            <p>
+               Your shipment arrives safely at its destination.
+            </p>
+         </div>
+
+      </div>
+
+      <div class="process-bottom">
+         <div class="process-bottom-icon">
+            <i class="bi bi-geo-alt"></i>
+         </div>
+
+         <div>
+            <strong>Track your shipment at every stage.</strong>
+            <span>Use your tracking number to view the latest shipment status.</span>
+         </div>
+
+         <a href="/track/" class="btn btn-primary">
+            Track Shipment
+            <i class="bi bi-arrow-up-right"></i>
+         </a>
+      </div>
+
+   </div>
+</section>
+
+
+<!-- Tracking Section -->
+<section class="tracking-section">
+   <div class="container">
+
+      <div class="tracking-wrapper">
+
+         <div class="tracking-content">
+            <span class="section-label">SHIPMENT TRACKING</span>
+
+            <h2>Know where your shipment is, every step of the way.</h2>
+
+            <p>
+               Enter your tracking number to quickly check the latest
+               status and movement of your shipment.
+            </p>
+
+            <form id="home-tracking-form" class="tracking-form">
+               <div class="tracking-input">
+                  <i class="bi bi-search"></i>
+                  <input type="text" id="home-tracking-number" name="tracking_number" placeholder="Enter tracking number"
+                     aria-label="Tracking number" autocomplete="off" required>
+               </div>
+            
+               <button type="submit" class="btn btn-primary">
+                  Track Shipment
+                  <i class="bi bi-arrow-right"></i>
+               </button>
+            </form>
+
+            <div class="tracking-note">
+               <i class="bi bi-shield-check"></i>
+               <span>Secure tracking information available 24/7.</span>
+            </div>
+         </div>
+
+         <div class="tracking-visual">
+
+            <div class="tracking-card">
+
+               <div class="tracking-card-header">
+                  <div>
+                     <span>TRACKING NUMBER</span>
+                     <strong>USPG-20481</strong>
+                  </div>
+
+                  <span class="tracking-status">
+                     <i></i>
+                     In Transit
+                  </span>
+               </div>
+
+               <div class="tracking-route">
+                  <div class="tracking-location">
+                     <span class="tracking-dot"></span>
+
+                     <div>
+                        <small>ORIGIN</small>
+                        <strong>Texas, USA</strong>
+                     </div>
+                  </div>
+
+                  <div class="tracking-progress">
+                     <span></span>
+                     <i class="bi bi-truck"></i>
+                  </div>
+
+                  <div class="tracking-location">
+                     <span class="tracking-dot destination"></span>
+
+                     <div>
+                        <small>DESTINATION</small>
+                        <strong>Paris, France</strong>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="tracking-card-footer">
+                  <div>
+                     <small>LAST UPDATED</small>
+                     <strong>Shipment in transit</strong>
+                  </div>
+
+                  <i class="bi bi-arrow-up-right"></i>
+               </div>
+
+            </div>
+
+            <div class="tracking-glow"></div>
+
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+
+
+<!-- Why USPS Globals Section -->
+<section class="why-section">
+   <div class="container">
+
+      <div class="why-heading">
+         <span class="section-label">WHY USPS GLOBALS</span>
+         <h2>More than moving packages.<br><span>We move them with purpose.</span></h2>
+      </div>
+
+      <div class="why-grid">
+
+         <div class="why-main-card">
+            <div class="why-main-icon">
+               <i class="bi bi-globe2"></i>
+            </div>
+
+            <span class="why-card-label">GLOBAL LOGISTICS</span>
+
+            <h3>Built for shipments that cross borders.</h3>
+
+            <p>
+               USPS Globals combines reliable logistics coordination,
+               shipment visibility, and responsive support to make
+               moving goods simpler from origin to destination.
+            </p>
+
+            <div class="why-route">
+               <span>Origin</span>
+               <div class="why-route-line">
+                  <i class="bi bi-airplane"></i>
+               </div>
+               <span>Destination</span>
+            </div>
+         </div>
+
+         <div class="why-small-card">
+            <div class="why-small-icon">
+               <i class="bi bi-shield-check"></i>
+            </div>
+
+            <h3>Handled with care</h3>
+
+            <p>
+               Every shipment is treated with attention from pickup
+               through final delivery.
+            </p>
+         </div>
+
+         <div class="why-small-card">
+            <div class="why-small-icon">
+               <i class="bi bi-eye"></i>
+            </div>
+
+            <h3>Clear visibility</h3>
+
+            <p>
+               Track shipment progress and stay informed throughout
+               the transportation journey.
+            </p>
+         </div>
+
+         <div class="why-small-card">
+            <div class="why-small-icon">
+               <i class="bi bi-headset"></i>
+            </div>
+
+            <h3>Responsive support</h3>
+
+            <p>
+               Get dependable communication when you need help with
+               your shipment or logistics requirements.
+            </p>
+         </div>
+
+         <div class="why-small-card">
+            <div class="why-small-icon">
+               <i class="bi bi-diagram-3"></i>
+            </div>
+
+            <h3>Flexible solutions</h3>
+
+            <p>
+               Shipping options designed around different package,
+               cargo, and business requirements.
+            </p>
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+   <div class="container">
+
+      <div class="testimonials-heading">
+         <div>
+            <span class="section-label">CUSTOMER EXPERIENCE</span>
+            <h2>Trusted by people who need shipping done right.</h2>
+         </div>
+
+         <div class="overall-rating">
+            <strong>4.9</strong>
+
+            <div>
+               <div class="rating-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+               </div>
+               <span>Based on 250+ customer reviews</span>
+            </div>
+         </div>
+      </div>
+
+      <div class="testimonials-grid">
+
+         <article class="testimonial-card testimonial-featured">
+            <div class="testimonial-top">
+               <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+               </div>
+
+               <i class="bi bi-quote testimonial-quote"></i>
+            </div>
+
+            <p>
+               “The entire shipping process was straightforward.
+               I always knew where my package was and the support
+               team kept me informed throughout the journey.”
+            </p>
+
+            <div class="testimonial-author">
+               <div class="author-avatar">JD</div>
+
+               <div>
+                  <strong>James D.</strong>
+                  <span>Business Customer · Verified</span>
+               </div>
+            </div>
+         </article>
+
+         <article class="testimonial-card">
+            <div class="testimonial-top">
+               <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+               </div>
+            </div>
+
+            <p>
+               “Professional service from pickup to delivery.
+               Everything arrived safely and right on schedule.”
+            </p>
+
+            <div class="testimonial-author">
+               <div class="author-avatar">AM</div>
+
+               <div>
+                  <strong>Anna M.</strong>
+                  <span>Verified Customer</span>
+               </div>
+            </div>
+         </article>
+
+         <article class="testimonial-card">
+            <div class="testimonial-top">
+               <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+               </div>
+            </div>
+
+            <p>
+               “The tracking updates made the whole experience
+               much easier. I could check the shipment whenever I needed.”
+            </p>
+
+            <div class="testimonial-author">
+               <div class="author-avatar">RK</div>
+
+               <div>
+                  <strong>Robert K.</strong>
+                  <span>Verified Customer</span>
+               </div>
+            </div>
+         </article>
+
+      </div>
+
+   </div>
+</section>
+
+
+<!-- Global Coverage Section -->
+<section class="coverage-section">
+   <div class="container">
+
+      <div class="coverage-heading">
+         <div>
+            <span class="section-label">GLOBAL COVERAGE</span>
+            <h2>Connecting shipments across borders.</h2>
+         </div>
+
+         <p>
+            From local origins to international destinations, USPS Globals
+            helps connect shipments to the places they need to reach.
+         </p>
+      </div>
+
+      <div class="coverage-wrapper">
+
+         <div class="coverage-map">
+            <div class="coverage-grid"></div>
+
+            <div class="coverage-route route-a"></div>
+            <div class="coverage-route route-b"></div>
+            <div class="coverage-route route-c"></div>
+
+            <div class="coverage-point point-a">
+               <span></span>
+               <strong>Texas</strong>
+            </div>
+
+            <div class="coverage-point point-b">
+               <span></span>
+               <strong>Dubai</strong>
+            </div>
+
+            <div class="coverage-point point-c">
+               <span></span>
+               <strong>London</strong>
+            </div>
+
+            <div class="coverage-point point-d">
+               <span></span>
+               <strong>Paris</strong>
+            </div>
+
+            <div class="coverage-center">
+               <i class="bi bi-globe2"></i>
+               <span>USPS Globals</span>
+            </div>
+         </div>
+
+         <div class="coverage-info">
+
+            <div class="coverage-stat">
+               <strong>45+</strong>
+               <span>Countries served</span>
+            </div>
+
+            <div class="coverage-stat">
+               <strong>100+</strong>
+               <span>Shipping destinations</span>
+            </div>
+
+            <div class="coverage-stat">
+               <strong>24/7</strong>
+               <span>Tracking visibility</span>
+            </div>
+
+            <div class="coverage-info-bottom">
+               <i class="bi bi-globe-americas"></i>
+
+               <div>
+                  <strong>Wherever your shipment needs to go.</strong>
+                  <span>
+                     Talk to our team about your next shipment.
+                  </span>
+               </div>
+            </div>
+
+            <a href="/quote/" class="btn btn-primary">
+               Start a Shipment
+               <i class="bi bi-arrow-up-right"></i>
+            </a>
+
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+
+<!-- Shipment Journey Section -->
+<section class="journey-section">
+   <div class="container">
+
+      <div class="journey-heading">
+         <span class="section-label">THE JOURNEY</span>
+         <h2>Every shipment has a story.<br><span>We help move it forward.</span></h2>
+      </div>
+
+      <div class="journey-wrapper">
+
+         <div class="journey-card journey-card-main">
+            <div class="journey-card-top">
+               <span>SHIPMENT JOURNEY</span>
+               <i class="bi bi-arrow-up-right"></i>
+            </div>
+
+            <div class="journey-route">
+               <div class="journey-location">
+                  <span class="journey-point"></span>
+                  <div>
+                     <small>ORIGIN</small>
+                     <strong>Texas</strong>
+                  </div>
+               </div>
+
+               <div class="journey-line">
+                  <span></span>
+                  <i class="bi bi-box-seam"></i>
+               </div>
+
+               <div class="journey-location">
+                  <span class="journey-point destination"></span>
+                  <div>
+                     <small>DESTINATION</small>
+                     <strong>Paris</strong>
+                  </div>
+               </div>
+            </div>
+
+            <div class="journey-status">
+               <div class="journey-status-icon">
+                  <i class="bi bi-truck"></i>
+               </div>
+
+               <div>
+                  <small>CURRENT STATUS</small>
+                  <strong>Shipment in transit</strong>
+               </div>
+
+               <span class="journey-live">
+                  <i></i>
+                  Moving
+               </span>
+            </div>
+         </div>
+
+         <div class="journey-side">
+
+            <div class="journey-feature">
+               <div class="journey-feature-icon">
+                  <i class="bi bi-box2-heart"></i>
+               </div>
+
+               <div>
+                  <strong>Carefully handled</strong>
+                  <span>
+                     From collection to delivery, your shipment
+                     remains part of the journey.
+                  </span>
+               </div>
+            </div>
+
+            <div class="journey-feature">
+               <div class="journey-feature-icon">
+                  <i class="bi bi-broadcast"></i>
+               </div>
+
+               <div>
+                  <strong>Stay informed</strong>
+                  <span>
+                     Shipment tracking keeps you connected to
+                     important progress updates.
+                  </span>
+               </div>
+            </div>
+
+            <div class="journey-feature">
+               <div class="journey-feature-icon">
+                  <i class="bi bi-check2-circle"></i>
+               </div>
+
+               <div>
+                  <strong>Delivered safely</strong>
+                  <span>
+                     The journey ends when your shipment reaches
+                     its intended destination.
+                  </span>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+
+<!-- FAQ Section -->
+<section class="faq-section">
+   <div class="container">
+
+      <div class="faq-heading">
+         <span class="section-label">FAQ</span>
+         <h2>Questions, answered.</h2>
+         <p>
+            Find quick answers to common questions about shipping,
+            tracking, delivery, and our services.
+         </p>
+      </div>
+
+      <div class="faq-wrapper">
+
+         <div class="accordion" id="homeFaq">
+
+            <div class="accordion-item">
+               <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                     How do I ship a package with USPS Globals?
+                  </button>
+               </h3>
+
+               <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#homeFaq">
+                  <div class="accordion-body">
+                     Request a quote with your shipment details.
+                     Our team will review your requirements and
+                     provide the appropriate shipping solution.
+                  </div>
+               </div>
+            </div>
+
+            <div class="accordion-item">
+               <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#faqTwo">
+                     Can I track my shipment?
+                  </button>
+               </h3>
+
+               <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
+                  <div class="accordion-body">
+                     Yes. Once your shipment has been created,
+                     you can use its tracking number to view the
+                     latest shipment status and tracking updates.
+                  </div>
+               </div>
+            </div>
+
+            <div class="accordion-item">
+               <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#faqThree">
+                     Do you offer international shipping?
+                  </button>
+               </h3>
+
+               <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
+                  <div class="accordion-body">
+                     Yes. USPS Globals provides international shipping
+                     and logistics solutions for shipments moving
+                     across borders.
+                  </div>
+               </div>
+            </div>
+
+            <div class="accordion-item">
+               <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#faqFour">
+                     What information do I need to request a quote?
+                  </button>
+               </h3>
+
+               <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
+                  <div class="accordion-body">
+                     You will generally need the origin, destination,
+                     package details, approximate weight, dimensions,
+                     and your contact information.
+                  </div>
+               </div>
+            </div>
+
+            <div class="accordion-item">
+               <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#faqFive">
+                     How can I contact USPS Globals?
+                  </button>
+               </h3>
+
+               <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
+                  <div class="accordion-body">
+                     You can contact our team through the contact page
+                     or use the contact information provided throughout
+                     the website.
+                  </div>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="faq-side-card">
+            <div class="faq-side-icon">
+               <i class="bi bi-chat-dots"></i>
+            </div>
+
+            <span>STILL HAVE QUESTIONS?</span>
+
+            <h3>We're here to help.</h3>
+
+            <p>
+               If you cannot find the answer you're looking for,
+               reach out to our team directly.
+            </p>
+
+            <a href="/contact/" class="btn btn-primary">
+               Contact Us
+               <i class="bi bi-arrow-up-right"></i>
+            </a>
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+
+<!-- Final CTA Section -->
+<section class="final-cta-section">
+   <div class="container">
+
+      <div class="final-cta">
+
+         <div class="final-cta-glow"></div>
+
+         <div class="final-cta-content">
+            <span class="section-label">READY TO SHIP?</span>
+
+            <h2>
+               Let's move your shipment
+               <span>forward.</span>
+            </h2>
+
+            <p>
+               Tell us where your shipment is going and what you need.
+               USPS Globals is ready to help you plan the next step.
+            </p>
+
+            <div class="final-cta-actions">
+               <a href="/quote/" class="btn btn-primary">
+                  Get a Quote
+                  <i class="bi bi-arrow-up-right"></i>
+               </a>
+
+               <a href="/contact/" class="final-cta-link">
+                  Talk to our team
+                  <i class="bi bi-arrow-right"></i>
+               </a>
+            </div>
+         </div>
+
+         <div class="final-cta-visual">
+            <div class="cta-orbit cta-orbit-one"></div>
+            <div class="cta-orbit cta-orbit-two"></div>
+
+            <div class="cta-package">
+               <i class="bi bi-box-seam"></i>
+            </div>
+
+            <div class="cta-location cta-location-one">
+               <i class="bi bi-geo-alt-fill"></i>
+               <span>Origin</span>
+            </div>
+
+            <div class="cta-location cta-location-two">
+               <i class="bi bi-flag-fill"></i>
+               <span>Destination</span>
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+   $(document).ready(function () {
+      $("#home-tracking-form").on("submit", function (e) {
+         e.preventDefault();
+
+         const form = $(this);
+         const trackingNumber = $("#home-tracking-number").val().trim();
+         const button = form.find("button");
+
+         if (!trackingNumber) return;
+
+         button.prop("disabled", true).addClass("loading").html(`
+            <span class="spinner-border spinner-border-sm me-2"></span>
+            Tracking...
+        `);
+
+         $.ajax({
+            url: "{% url 'track_shipment_ajax' %}",
+            type: "GET",
+            data: { tracking_number: trackingNumber },
+            success: function (response) {
+               if (response.success && response.shipment.tracking_number) {
+                  window.location.href = "{% url 'shipment_detail' 'TRACKING_NUMBER' %}".replace(
+                     "TRACKING_NUMBER",
+                     encodeURIComponent(response.shipment.tracking_number)
+                  );
+               }
+            },
+            error: function (xhr) {
+               const message = xhr.responseJSON?.message || "Unable to find shipment.";
+
+               button.prop("disabled", false).removeClass("loading").html(`
+                    Track Shipment
+                    <i class="bi bi-arrow-right"></i>
+                `);
+
+               alert(message);
+            }
+         });
+      });
+   });
+</script>
+{% endblock %}

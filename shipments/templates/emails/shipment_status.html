@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#f5f8fb;font-family:Arial,sans-serif;color:#102033;">
+<div style="max-width:600px;margin:40px auto;background:#fff;padding:35px;border-radius:12px;">
+    <h2 style="margin-top:0;color:#0b6bcb;">Shipment Status Updated</h2>
+    <p>Your shipment status has been updated.</p>
+
+    <p><strong>Tracking Number:</strong> {{ shipment.tracking_number }}</p>
+    <p><strong>Status:</strong> {{ shipment.get_status_display }}</p>
+    <p><strong>Current Location:</strong> {{ shipment.current_location|default:"Not available" }}</p>
+
+    {% if shipment.tracking_note %}
+    <p><strong>Update:</strong> {{ shipment.tracking_note }}</p>
+    {% endif %}
+
+    {% if shipment.estimated_delivery_date %}
+    <p><strong>Estimated Delivery:</strong> {{ shipment.estimated_delivery_date|date:"d M Y" }}</p>
+    {% endif %}
+
+    <a href="{{ site_url }}/shipment/{{ shipment.tracking_number }}/"
+       style="display:inline-block;margin-top:15px;padding:12px 20px;background:#0b6bcb;color:#fff;text-decoration:none;border-radius:6px;">
+        Track Shipment
+    </a>
+
+    <p style="margin-top:30px;color:#7d8a99;">USPS Globals</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet">
+
+    <style>
+        #mapbox-location-search {
+            margin: 10px 0 15px;
+        }
+
+        #mapbox-location-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #mapbox-location-results {
+            background: lightgray;
+            color: #222;
+            z-index: 9999;
+            position: relative;
+        }
+
+        .mapbox-result {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-top: 0;
+            background: lightgray;
+            color: #222;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .mapbox-result:hover {
+            background: #f0f4f8;
+            color: #111;
+        }
+
+    </style>
+
+    <script>
+        const MAPBOX_TOKEN = "{{ MAPBOX_ACCESS_TOKEN }}";
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.getElementById("mapbox-location-input");
+            const results = document.getElementById("mapbox-location-results");
+            const locationField = document.getElementById("id_location");
+            const latitudeField = document.getElementById("id_latitude");
+            const longitudeField = document.getElementById("id_longitude");
+
+            let timeout;
+
+            input.addEventListener("input", function () {
+                clearTimeout(timeout);
+
+                const query = input.value.trim();
+
+                if (query.length < 2) {
+                    results.innerHTML = "";
+                    return;
+                }
+
+                timeout = setTimeout(async function () {
+                    const url =
+                        `https://api.mapbox.com/search/geocode/v6/forward` +
+                        `?q=${encodeURIComponent(query)}` +
+                        `&limit=5` +
+                        `&access_token=${MAPBOX_TOKEN}`;
+
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
+
+                        results.innerHTML = "";
+
+                        data.features.forEach(function (feature) {
+                            const item = document.createElement("div");
+                            item.className = "mapbox-result";
+                            item.textContent = feature.properties.full_address || feature.properties.name;
+
+                            item.addEventListener("click", function () {
+                                const [longitude, latitude] = feature.geometry.coordinates;
+
+                                locationField.value =
+                                    feature.properties.full_address ||
+                                    feature.properties.name;
+
+                                latitudeField.value = latitude;
+                                longitudeField.value = longitude;
+
+                                input.value =
+                                    feature.properties.full_address ||
+                                    feature.properties.name;
+
+                                results.innerHTML = "";
+                            });
+
+                            results.appendChild(item);
+                        });
+                    } catch (error) {
+                        console.error("Mapbox search error:", error);
+                    }
+                }, 400);
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div id="mapbox-location-search">
+        <label for="mapbox-location-input">
+            <strong>Search Location</strong>
+        </label>
+
+        <input
+            type="text"
+            id="mapbox-location-input"
+            placeholder="Search city, address, or location..."
+            autocomplete="off"
+        >
+
+        <div id="mapbox-location-results"></div>
+    </div>
+
+    {{ block.super }}
+{% endblock %}
