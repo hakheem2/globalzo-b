@@ -109,6 +109,7 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 CONTACT_EMAIL = os.getenv("CONTACT_EMAIL")
 
 SITE_URL = os.getenv("SITE_URL", "https://uspsglobals.com")
+LOGIN_URL = "/dashboard/login/"
 
 # security_settings
 if not DEBUG:
