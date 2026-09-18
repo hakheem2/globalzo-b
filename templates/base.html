@@ -18,7 +18,7 @@
 
    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
 
-   <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+   <link rel="icon" type="image/png" href="{% static 'images/logo/favicon.png' %}">
 
    <!-- Open Graph -->
    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
@@ -28,7 +28,7 @@
       content="{% block og_description %}Reliable global shipping, delivery, freight, and logistics services from USPS Globals.{% endblock %}">
    <meta property="og:url" content="{{ request.build_absolute_uri }}">
    <meta property="og:site_name" content="USPS Globals">
-   <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.jpg' %}">
+   <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo/logo.jpg' %}">
 
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
       content="{% block twitter_title %}{{ site_settings.company_name|default:'USPS Globals' }}{% endblock %}">
    <meta name="twitter:description"
       content="{% block twitter_description %}Reliable global shipping, delivery, freight, and logistics services from USPS Globals.{% endblock %}">
-   <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.jpg' %}">
+   <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo/logo.jpg' %}">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,6 +236,20 @@
    <script src="{% static 'js/main.js' %}"></script>
 
    {% block extra_js %}{% endblock %}
+
+   <!--Start of Tawk.to Script-->
+   <script type="text/javascript">
+   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+   (function(){
+   var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+   s1.async=true;
+   s1.src='https://embed.tawk.to/6aacdb51eea510344ddcc6d3/1k2pjhdla';
+   s1.charset='UTF-8';
+   s1.setAttribute('crossorigin','*');
+   s0.parentNode.insertBefore(s1,s0);
+   })();
+   </script>
+   <!--End of Tawk.to Script-->
 
 </body>
 </html>
