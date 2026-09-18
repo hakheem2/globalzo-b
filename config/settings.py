@@ -15,6 +15,11 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://uspsglobals.com",
+    "https://www.uspsglobals.com",
+]
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
