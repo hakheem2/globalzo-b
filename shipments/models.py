@@ -148,7 +148,7 @@ class Shipment(models.Model):
             old_status = Shipment.objects.filter(pk=self.pk).values_list("status", flat=True).first()
 
         if not self.tracking_number:
-            self.tracking_number = f"USPSG-{get_random_string(10).upper()}"
+            self.tracking_number = f"GZ-{get_random_string(10).upper()}"
 
         super().save(*args, **kwargs)
 

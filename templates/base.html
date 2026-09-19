@@ -7,13 +7,13 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>{% block title %}USPS Globals | Global Shipping & Logistics Services{% endblock %}</title>
+   <title>{% block title %}GlobalZo | Global Shipping & Logistics Services{% endblock %}</title>
 
    <meta name="description"
-      content="{% block meta_description %}USPS Globals provides reliable global shipping, delivery, freight, and logistics services for businesses and individuals.{% endblock %}">
+      content="{% block meta_description %}GlobalZo provides reliable global shipping, delivery, freight, and logistics services for businesses and individuals.{% endblock %}">
 
    <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
-   <meta name="author" content="USPS Globals">
+   <meta name="author" content="GlobalZo">
    <meta name="theme-color" content="#005EA8">
 
    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
@@ -23,19 +23,19 @@
    <!-- Open Graph -->
    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
    <meta property="og:title"
-      content="{% block og_title %}{{ site_settings.company_name|default:'USPS Globals' }}{% endblock %}">
+      content="{% block og_title %}{{ site_settings.company_name|default:'GlobalZo' }}{% endblock %}">
    <meta property="og:description"
-      content="{% block og_description %}Reliable global shipping, delivery, freight, and logistics services from USPS Globals.{% endblock %}">
+      content="{% block og_description %}Reliable global shipping, delivery, freight, and logistics services from GlobalZo.{% endblock %}">
    <meta property="og:url" content="{{ request.build_absolute_uri }}">
-   <meta property="og:site_name" content="USPS Globals">
+   <meta property="og:site_name" content="GlobalZo">
    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo/logo.jpg' %}">
 
    <!-- Twitter -->
    <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:title"
-      content="{% block twitter_title %}{{ site_settings.company_name|default:'USPS Globals' }}{% endblock %}">
+      content="{% block twitter_title %}{{ site_settings.company_name|default:'GlobalZo' }}{% endblock %}">
    <meta name="twitter:description"
-      content="{% block twitter_description %}Reliable global shipping, delivery, freight, and logistics services from USPS Globals.{% endblock %}">
+      content="{% block twitter_description %}Reliable global shipping, delivery, freight, and logistics services from GlobalZo.{% endblock %}">
    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo/logo.jpg' %}">
 
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,7 @@
                   <img src="{{ site_settings.logo.url }}" alt="{{ site_settings.company_name }}">
                {% else %}
                   <span class="brand-mark">U</span>
-                  <span>USPS <strong>Globals</strong></span>
+                  <span>GlobalZo</span>
                {% endif %}
          </a>
 
@@ -77,7 +77,7 @@
                <img src="{{ site_settings.logo.url }}" alt="{{ site_settings.company_name }}">
                {% else %}
                <span class="brand-mark">U</span>
-               <span>USPS <strong>Globals</strong></span>
+               <span>GlobalZo</span>
                {% endif %}
             </a>
          
@@ -151,7 +151,7 @@
                   <img src="{{ site_settings.logo.url }}" alt="{{ site_settings.company_name }}">
                   {% else %}
                   <span class="brand-mark">U</span>
-                  <span>USPS <strong>Globals</strong></span>
+                  <span>GlobalZo</span>
                   {% endif %}
                </a>
    
@@ -219,7 +219,7 @@
    
          <div class="footer-bottom">
             <span>
-               © {% now "Y" %} USPS Globals. All rights reserved.
+               © {% now "Y" %} GlobalZo. All rights reserved.
             </span>
    
             <div>
