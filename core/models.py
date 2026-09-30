@@ -3,7 +3,7 @@ from django.db import models
 
 class SiteSettings(models.Model):
    company_name = models.CharField(max_length=150, default="GlobalZo")
-   email = models.EmailField(default="globalzo@globalzologistic.com")
+   email = models.EmailField(default="globalzo@globalszologistics.com")
    phone = models.CharField(max_length=50, blank=True)
    address = models.CharField(max_length=255, blank=True)
    logo = models.ImageField(upload_to="site/", blank=True, null=True)

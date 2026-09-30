@@ -1,6 +1,6 @@
 :root {
-    --primary: #0b6bcb;
-    --primary-dark: #07539f;
+    --primary: #e5483f;
+    --primary-dark: #c9362f;
     --dark: #102033;
     --text: #526174;
     --muted: #7d8a99;
@@ -29,6 +29,7 @@ body {
 .dashboard-sidebar {
     width: 250px;
     min-height: 100vh;
+    overflow-y: auto;
     position: fixed;
     left: 0;
     top: 0;
@@ -124,12 +125,12 @@ body {
 
 .dashboard-nav-link:hover {
     color: var(--primary);
-    background: #f1f6fb;
+    background: #fdf0ef;
 }
 
 .dashboard-nav-link.active {
     color: var(--primary);
-    background: #eaf3fb;
+    background: #fce9e7;
 }
 
 .dashboard-sidebar-bottom {
@@ -317,8 +318,8 @@ body {
 }
 
 .dashboard-stat-icon.blue {
-    background: #eaf3fb;
-    color: #0b6bcb
+    background: #fce9e7;
+    color: var(--primary)
 }
 
 .dashboard-stat-icon.orange {
@@ -431,8 +432,8 @@ body {
 }
 
 .status-picked_up {
-    background: #eaf3fb;
-    color: #0b6bcb
+    background: #fce9e7;
+    color: var(--primary)
 }
 
 .status-in_transit {
@@ -441,8 +442,8 @@ body {
 }
 
 .status-at_destination {
-    background: #e8f2fc;
-    color: #0b6bcb
+    background: #fce9e7;
+    color: var(--primary)
 }
 
 .status-out_for_delivery {
@@ -657,7 +658,7 @@ body {
 }
 
 .shipment-action.edit:hover {
-    background: #eaf3fb;
+    background: #fce9e7;
 }
 
 .shipment-action.delete:hover {

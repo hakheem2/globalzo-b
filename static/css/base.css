@@ -1,6 +1,6 @@
 :root {
-   --primary: #0b6bcb;
-   --primary-dark: #07539f;
+   --primary: #e5483f;
+   --primary-dark: #c9362f;
    --dark: #102033;
    --text: #526174;
    --muted: #7d8a99;
@@ -13,6 +13,11 @@
 
 * {
    box-sizing: border-box;
+}
+
+.btn-primary{
+   background-color: var(--primary) !important;
+   border-color: var(--primary) !important;
 }
 
 html {
@@ -207,57 +212,39 @@ a {
       font-weight: 700;
    }
 
-   .mobile-navbar-contact h4::after {
-      content: "";
-      display: block;
-      width: 28px;
-      height: 3px;
-      margin-top: 8px;
-      background: #0b6bcb;
-      border-radius: 3px;
-   }
-
-   .mobile-navbar-contact a,
-   .mobile-navbar-contact span {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 42px;
-      padding: 8px 10px;
-      color: #526174;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.4;
-      text-decoration: none;
-      background: #fff;
-      border: 1px solid #e7edf3;
-      border-radius: 10px;
-      transition: .3s ease;
-   }
-
-   .mobile-navbar-contact a:hover {
-      color: #0b6bcb;
-      border-color: #cddbea;
-      transform: translateX(2px);
-   }
-
-   .mobile-navbar-contact i {
-      width: 34px;
-      height: 34px;
-      flex: 0 0 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0b6bcb;
-      background: #e8f2fc;
-      border-radius: 9px;
-      font-size: 16px;
-   }
-
-   .mobile-navbar-contact a:hover i {
-      background: #0b6bcb;
-      color: #fff;
-   }
+      .mobile-navbar-contact h4::after {
+         content: "";
+         display: block;
+         width: 28px;
+         height: 3px;
+         margin-top: 8px;
+         background: #e5483f;
+         border-radius: 3px;
+      }
+   
+      .mobile-navbar-contact a:hover {
+         color: #e5483f;
+         border-color: #f2c9c6;
+         transform: translateX(2px);
+      }
+   
+      .mobile-navbar-contact i {
+         width: 34px;
+         height: 34px;
+         flex: 0 0 34px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: #e5483f;
+         background: #fff1f0;
+         border-radius: 9px;
+         font-size: 16px;
+      }
+   
+      .mobile-navbar-contact a:hover i {
+         background: #e5483f;
+         color: #fff;
+      }
 }
 
 

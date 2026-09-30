@@ -18,8 +18,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://globalzologistic.com",
-    "https://www.globalzologistic.com",
+    "https://globalszologistics.com",
+    "https://www.globalszologistics.com",
 ]
 
 
@@ -117,7 +117,7 @@ resend.api_key = RESEND_API_KEY
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 CONTACT_EMAIL = os.getenv("CONTACT_EMAIL")
 
-SITE_URL = os.getenv("SITE_URL", "https://globalzologistic.com")
+SITE_URL = os.getenv("SITE_URL", "https://globalszologistics.com")
 LOGIN_URL = "/dashboard/login/"
 
 # security_settings
